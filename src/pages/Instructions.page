@@ -1,0 +1,64 @@
+<apex:page title="Instructions Quality Clouds App" sidebar="false" >
+    
+	<div style = "font-size:16px;">
+        
+        <h1>PREREQUISITES</h1><br/><br/>
+        <h1>User</h1><br/><br/>
+        
+        The App can be used only from the users with the following requirements: <br/><br/>
+        
+        Profile : System Administrator<br/>
+        Work.con (Setting) : Enabled<br/><br/>
+        
+        <hr/>    
+        
+        <h1>SCAN</h1><br/><br/>
+            
+        <h1>First Scan</h1><br/><br/>
+        
+        To launch the first scan:<br/><br/>
+        
+        1.Go to the Application "Quality Clouds"<br/>
+        2.Click on the tab "Scans"<br/>
+        3.Click on the button "Setup Customer"<br/>
+        4.Insert the name and the email to create the user in QC portal <br/>
+        5.Click on the button OK<br/> 
+        6.Wait the email to verificate the account and click on the link present in the email<br/>
+        7.Create the user in QC inserting the username and new password<br/>
+        8.Back in the app and insert the QC user credentials : username and password<br/>
+        9.Click on the button OK<br/>
+        10.Insert the Salesforce user password and security token*: Password+SecurityToken* without space (Ex: "passwordUserTokenUser")<br/>
+        11.Click on the button OK<br/><br/>
+        
+        
+        <h1>New Scan</h1><br/><br/>
+        
+        When you click on the button "Launch Scan", the scan just launched is not visible, click on the button "Refresh" to view the scan in the list. The button "Refresh" updates the status and the list of the scans. If a scan is running , click on the button "Refresh" in order to figure out if the scan is completed.<br/><br/> 
+        
+        <hr/>
+        
+        <h1>GOVERNANCE</h1><br/><br/>
+            
+        In the tab "Governance" you can view the "Scan Date" and the "Number of the issues" of the last scan. The box "Trending" shows an indicator of the evolution of the number of issues in the two last scans:<br/><br/>
+        
+        - If the issues of the last two scans are equals , it will show : &nbsp; <apex:image url="{!URLFOR($Resource.Quality_Clouds,'LogoIgual.png')}" width="16px" height="15px"/> <br/>
+        - If the issues of the last scan is higher than the previously one, it will show : &nbsp;  <apex:image url="{!URLFOR($Resource.Quality_Clouds,'LogoUp.png')}" width="16px" height="15px"/><br/>
+        - If the issues of the last scan is lower than the previously one, it will show : &nbsp;  <apex:image url="{!URLFOR($Resource.Quality_Clouds,'LogoDown.png')}" width="16px" height="15px"/><br/><br/>
+            
+        Moreover, in the tab "Governance" will be showed the evolution time of the "Issues", "Code Lines" and "Technical Debt" over the scans.<br/><br/><br/>
+        
+        <hr/>
+        
+        <h1>Appendix</h1><br/><br/>
+        
+        *Security Token of the user, retrievable following these steps:<br/><br/>
+        
+        1.Click on your account in your Salesforce instance<br/>
+        2.My Settings<br/>
+        3.Personal<br/>
+        4.Reset My Security Token<br/>
+        5.It will send an email with the token<br/>
+        
+	</div>
+    
+</apex:page>

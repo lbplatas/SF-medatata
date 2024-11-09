@@ -1,0 +1,97 @@
+<apex:page standardController="Scan__c"  extensions="Scan_Page_Extension" tabStyle="Scans__tab" lightningStylesheets="true" >
+    <style>
+        
+        .headerRow .TableTitle {
+        	background-color: blue !important;
+        }
+
+		.tableStyle * {
+        	font-size:16px;
+    		text-align:center;
+		}
+        
+        .buttonStyleScan{
+        	height:33px !important;
+        	border-radius:40px !important;
+        	width:105px !important;
+        	font-size: 14px !important;
+        	font-family: Helvetica, Arial, Sans-Serif !important;
+        }
+        
+        .buttonStyleNewCustomer{
+        	height:30px !important;
+        	border-radius:35px !important;
+        	width:125px !important;
+        	font-size: 14px !important;
+        	font-family: Helvetica, Arial, Sans-Serif !important;
+        	display:block;
+        	margin-top: 10px !important;
+        }
+        
+        .buttonStyle{
+        	height:30px !important;
+        	border-radius:35px !important;
+        	width:55px !important;
+        	font-size: 14px !important;
+        	font-family: Helvetica, Arial, Sans-Serif !important;
+        	display:block;
+        	margin-top: 10px !important;
+        }
+        
+        .inputText{
+        	height:20px !important;
+        	border-radius:35px !important;
+        	width:165px !important;
+        	font-size: 14px !important;
+        	font-family: Helvetica, Arial, Sans-Serif !important;
+        	display:block;
+        	margin-top: 10px !important;
+        }
+       
+        
+	</style>
+    
+    <apex:form style="height: 700px">
+        <div align="center" style="padding: 20px 10px;" >
+            
+            <apex:commandButton value="Setup Customer" action="{!checkCredential}"  styleClass="buttonStyleNewCustomer"  rendered="{!!displayLaunchScan}"/>
+           
+            <apex:commandButton value="Launch Scan" action="{!launchScan}"  styleClass="buttonStyleScan" rendered="{!displayLaunchScan}"/>
+        		
+            <apex:pageMessages ></apex:pageMessages>
+            
+            <apex:inputText value="{!nameCustomer}" styleClass="inputText" rendered="{!displayCreateCustomer}">Name: <br/></apex:inputText>
+            <apex:inputText value="{!emailCustomer}" styleClass="inputText" rendered="{!displayCreateCustomer}"><br/>Email:  <br/></apex:inputText>
+            <br/>
+            <apex:commandButton value="OK" action="{!newCustomer}" styleClass="buttonStyle" rendered="{!displayCreateCustomer}"/>
+            
+            <apex:inputText value="{!usernameQC}" rendered="{!displayPopupCredentialsQC}" styleClass="inputText">Username: <br/></apex:inputText>
+            <apex:inputSecret value="{!passwordQC}" rendered="{!displayPopupCredentialsQC}" styleClass="inputText"><br/>Password:  <br/></apex:inputSecret>
+            <br/>
+            <apex:commandButton value="OK" action="{!newToken}" rendered="{!displayPopupCredentialsQC}" styleClass="buttonStyle" />
+            <apex:commandButton value="Reset User" action="{!backUser}" rendered="{!displayPopupCredentialsQC}" styleClass="buttonStyleScan" />
+            
+            <apex:inputSecret value="{!userCredentials}" rendered="{!displayPopupPwdToken}" styleClass="inputText"/>
+            <br/>
+            <apex:commandButton value="OK" action="{!checkInstance}" rendered="{!displayPopupPwdToken}" styleClass="buttonStyle"/>
+
+		</div>
+      
+        
+		<apex:pageBlock rendered="{!displayLaunchScan}">
+            <apex:commandButton value="Refresh" action="{!refresh}" />
+    		<apex:pageBlockTable value="{!scans}" var="s" headerClass="tableStyle" styleclass="tableStyle" >
+      			<apex:column headervalue="Scan">
+                	<apex:outputLink value="/{!s.id}">{!s.name}</apex:outputLink>
+                </apex:column>
+      			<apex:column headervalue="Issues" value="{!s.Issues__c}"/>
+      			<apex:column headervalue="Technical Debt" value="{!s.Technical_Debt__c}"/>
+      			<apex:column headervalue="Code Lines" value="{!s.Code_Lines__c}"/>
+      			<apex:column headervalue="Scan Date" value="{!s.Scan_Date__c}"/>
+                <apex:column headervalue="Status" value="{!s.Status__c}"/>
+    		</apex:pageBlockTable>
+  		</apex:pageBlock>
+    
+        
+	</apex:form>
+</apex:page>

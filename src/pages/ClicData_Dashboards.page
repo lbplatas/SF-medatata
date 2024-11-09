@@ -1,0 +1,6 @@
+<apex:page standardController="Scan__c"  extensions="ClicData_Dashboards_Controller" tabStyle="Dashboards_QC__tab" lightningStylesheets="true">
+    <apex:iframe src="https://qualityclouds.clicdata.com/v/ko0EbhWr19oy?Authorization=Basic%20YWN1cGlAcXVhbGl0eWNsb3Vkcy5jb206cXVhbGl0eVVwMSE=&Environment={!scan.Target__c}&url_id={!scan.URL_Id__c}" height="850 px" scrolling="true" rendered="{!showIframe}"/>
+    <div align = "center">
+		<apex:PageMessage summary="No Scan Available" severity="warning" strength="3" rendered="{!showErrorMessage}"></apex:PageMessage>
+    </div>
+</apex:page>

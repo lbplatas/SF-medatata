@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+  <description>sample of an OmniScript to update Contact name, email, title, and phone</description>
+  <elementTypeComponentMapping>{"ElementTypeToHTMLTemplateList":[]}</elementTypeComponentMapping>
+  <isActive>false</isActive>
+  <isIntegrationProcedure>false</isIntegrationProcedure>
+  <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+  <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+  <isTestProcedure>false</isTestProcedure>
+  <isWebCompEnabled>true</isWebCompEnabled>
+  <language>English</language>
+  <name>Sample Edit Contact</name>
+  <omniProcessElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>IPGetContactDetails</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{
+      "controlWidth" : 12,
+      "integrationProcedureKey" : "sample_getContactDetails",
+      "useContinuation" : false,
+      "remoteOptions" : {
+      "preTransformBundle" : "",
+      "postTransformBundle" : "",
+      "useFuture" : false,
+      "chainable" : false
+      },
+      "remoteTimeout" : 30000,
+      "preTransformBundle" : "",
+      "postTransformBundle" : "",
+      "sendJSONPath" : "",
+      "sendJSONNode" : "",
+      "responseJSONPath" : "",
+      "responseJSONNode" : "",
+      "extraPayload" : {
+      "ContactId" : "%ContextId%"
+      },
+      "inProgressMessage" : "In Progress",
+      "postMessage" : "Done",
+      "failureNextLabel" : "Continue",
+      "failureAbortLabel" : "Abort",
+      "failureGoBackLabel" : "Go Back",
+      "failureAbortMessage" : "Are you sure?",
+      "validationRequired" : "None",
+      "redirectPageName" : "",
+      "redirectTemplateUrl" : "vlcAcknowledge.html",
+      "redirectNextLabel" : "Next",
+      "redirectNextWidth" : 3,
+      "redirectPreviousLabel" : "Previous",
+      "redirectPreviousWidth" : 3,
+      "showPersistentComponent" : [ false, false ],
+      "show" : null,
+      "HTMLTemplateId" : "",
+      "wpm" : false,
+      "ssm" : false,
+      "message" : { },
+      "pubsub" : false,
+      "svgSprite" : "",
+      "svgIcon" : "",
+      "label" : "IPGetContactDetails",
+      "errorMessage" : {
+      "custom" : [ ],
+      "default" : null
+      },
+      "enableDefaultAbort" : false,
+      "enableActionMessage" : false,
+      "disOnTplt" : false
+      }</propertySetConfig>
+    <sequenceNumber>1.0</sequenceNumber>
+    <type>Integration Procedure Action</type>
+  </omniProcessElements>
+  <omniProcessElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>IPSaveContactDetails</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{
+      "controlWidth" : 12,
+      "integrationProcedureKey" : "sample_saveContactDetails",
+      "useContinuation" : false,
+      "remoteOptions" : {
+      "preTransformBundle" : "",
+      "postTransformBundle" : "",
+      "useFuture" : false,
+      "chainable" : false
+      },
+      "remoteTimeout" : 30000,
+      "preTransformBundle" : "",
+      "postTransformBundle" : "",
+      "sendJSONPath" : "",
+      "sendJSONNode" : "",
+      "responseJSONPath" : "",
+      "responseJSONNode" : "",
+      "extraPayload" : {
+      "" : null
+      },
+      "inProgressMessage" : "In Progress",
+      "postMessage" : "Done",
+      "failureNextLabel" : "Continue",
+      "failureAbortLabel" : "Abort",
+      "failureGoBackLabel" : "Go Back",
+      "failureAbortMessage" : "Are you sure?",
+      "validationRequired" : "None",
+      "redirectPageName" : "",
+      "redirectTemplateUrl" : "vlcAcknowledge.html",
+      "redirectNextLabel" : "Next",
+      "redirectNextWidth" : 3,
+      "redirectPreviousLabel" : "Previous",
+      "redirectPreviousWidth" : 3,
+      "showPersistentComponent" : [ false, false ],
+      "show" : null,
+      "HTMLTemplateId" : "",
+      "wpm" : false,
+      "ssm" : false,
+      "message" : { },
+      "pubsub" : false,
+      "svgSprite" : "",
+      "svgIcon" : "",
+      "label" : "IPSaveContactDetails",
+      "errorMessage" : {
+      "custom" : [ ],
+      "default" : null
+      },
+      "enableDefaultAbort" : false,
+      "enableActionMessage" : false,
+      "disOnTplt" : false
+      }</propertySetConfig>
+    <sequenceNumber>3.0</sequenceNumber>
+    <type>Integration Procedure Action</type>
+  </omniProcessElements>
+  <omniProcessElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>NavigateAction1</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{
+      "controlWidth" : 12,
+      "targetType" : "Record",
+      "validationRequired" : null,
+      "show" : null,
+      "HTMLTemplateId" : "",
+      "variant" : "brand",
+      "pubsub" : true,
+      "message" : { },
+      "label" : "NavigateAction1",
+      "objectAction" : "home",
+      "objectActionOptions" : [ "home", "list", "new" ],
+      "recordAction" : "view",
+      "recordActionOptions" : [ "clone", "edit", "view" ],
+      "targetFilter" : "Recent",
+      "targetId" : "%ContextId%",
+      "targetTypeOptions" : [ "Component", "Current Page", "Knowledge Article", "Named Page",
+      "Navigation Item", "Object", "Record", "Record Relationship", "Web Page", "Vlocity OmniScript"
+      ],
+      "variantOptions" : [ "brand", "outline-brand", "neutral", "success", "destructive",
+      "text-destructive", "inverse", "link" ],
+      "iconName" : "",
+      "iconVariant" : "",
+      "iconPosition" : "left",
+      "iconPositionOptions" : [ "left", "right" ],
+      "replace" : true,
+      "replaceOptions" : [ {
+      "label" : "No",
+      "value" : false
+      }, {
+      "label" : "Yes",
+      "value" : true
+      } ],
+      "targetLWCLayout" : "lightning",
+      "targetLWCLayoutOptions" : [ "lightning", "newport" ],
+      "disOnTplt" : false,
+      "targetName" : "Contact"
+      }</propertySetConfig>
+    <sequenceNumber>4.0</sequenceNumber>
+    <type>Navigate Action</type>
+  </omniProcessElements>
+  <omniProcessElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Email</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{
+        "controlWidth" : 6,
+        "showInputWidth" : false,
+        "inputWidth" : 12,
+        "required" : true,
+        "repeat" : false,
+        "repeatClone" : false,
+        "readOnly" : false,
+        "help" : false,
+        "helpText" : "",
+        "ptrnErrText" : "",
+        "show" : null,
+        "conditionType" : "Hide if False",
+        "accessibleInFutureSteps" : false,
+        "debounceValue" : 0,
+        "HTMLTemplateId" : "",
+        "hide" : false,
+        "disOnTplt" : false,
+        "label" : "Email"
+        }</propertySetConfig>
+      <sequenceNumber>3.0</sequenceNumber>
+      <type>Email</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>FirstName</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{
+        "controlWidth" : 6,
+        "label" : "First Name",
+        "showInputWidth" : false,
+        "inputWidth" : 12,
+        "required" : true,
+        "repeat" : false,
+        "repeatClone" : false,
+        "repeatLimit" : null,
+        "readOnly" : false,
+        "defaultValue" : null,
+        "help" : false,
+        "helpText" : "",
+        "helpTextPos" : "",
+        "mask" : "",
+        "pattern" : "",
+        "ptrnErrText" : "",
+        "minLength" : 0,
+        "maxLength" : 255,
+        "placeholder" : "",
+        "show" : null,
+        "conditionType" : "Hide if False",
+        "accessibleInFutureSteps" : false,
+        "debounceValue" : 0,
+        "HTMLTemplateId" : "",
+        "hide" : false,
+        "disOnTplt" : false,
+        "autocomplete" : null
+        }</propertySetConfig>
+      <sequenceNumber>0.0</sequenceNumber>
+      <type>Text</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>LastName</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{
+        "controlWidth" : 6,
+        "label" : "Last Name",
+        "showInputWidth" : false,
+        "inputWidth" : 12,
+        "required" : true,
+        "repeat" : false,
+        "repeatClone" : false,
+        "repeatLimit" : null,
+        "readOnly" : false,
+        "defaultValue" : null,
+        "help" : false,
+        "helpText" : "",
+        "helpTextPos" : "",
+        "mask" : "",
+        "pattern" : "",
+        "ptrnErrText" : "",
+        "minLength" : 0,
+        "maxLength" : 255,
+        "placeholder" : "",
+        "show" : null,
+        "conditionType" : "Hide if False",
+        "accessibleInFutureSteps" : false,
+        "debounceValue" : 0,
+        "HTMLTemplateId" : "",
+        "hide" : false,
+        "disOnTplt" : false,
+        "autocomplete" : null
+        }</propertySetConfig>
+      <sequenceNumber>1.0</sequenceNumber>
+      <type>Text</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>LineBreak1</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{
+        "show" : null,
+        "label" : "LineBreak1",
+        "disOnTplt" : false,
+        "padding" : 0,
+        "HTMLTemplateId" : ""
+        }</propertySetConfig>
+      <sequenceNumber>2.0</sequenceNumber>
+      <type>Line Break</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Phone</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{
+        "controlWidth" : 6,
+        "showInputWidth" : false,
+        "inputWidth" : 12,
+        "required" : false,
+        "repeat" : false,
+        "repeatClone" : false,
+        "repeatLimit" : null,
+        "readOnly" : false,
+        "defaultValue" : null,
+        "help" : false,
+        "helpText" : "",
+        "mask" : "",
+        "pattern" : "",
+        "ptrnErrText" : "",
+        "minLength" : 0,
+        "maxLength" : 255,
+        "show" : null,
+        "conditionType" : "Hide if False",
+        "accessibleInFutureSteps" : false,
+        "debounceValue" : 0,
+        "HTMLTemplateId" : "",
+        "hide" : false,
+        "disOnTplt" : false,
+        "label" : "Phone"
+        }</propertySetConfig>
+      <sequenceNumber>4.0</sequenceNumber>
+      <type>Telephone</type>
+    </childElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>StepContact</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{
+      "show" : null,
+      "label" : "Contact Details",
+      "disOnTplt" : false,
+      "validationRequired" : true,
+      "previousLabel" : "Previous",
+      "previousWidth" : 3,
+      "nextLabel" : "Next",
+      "nextWidth" : 3,
+      "cancelLabel" : "Cancel",
+      "cancelMessage" : "Are you sure?",
+      "saveLabel" : "Save for later",
+      "saveMessage" : "Are you sure you want to save it for later?",
+      "completeLabel" : "Complete",
+      "completeMessage" : "Are you sure you want to complete the script?",
+      "instruction" : "",
+      "showPersistentComponent" : [ false, false ],
+      "remoteClass" : "",
+      "remoteMethod" : "",
+      "remoteTimeout" : 30000,
+      "remoteOptions" : { },
+      "knowledgeOptions" : {
+      "language" : "English",
+      "publishStatus" : "Online",
+      "keyword" : "",
+      "dataCategoryCriteria" : "",
+      "remoteTimeout" : 30000,
+      "typeFilter" : ""
+      },
+      "conditionType" : "Hide if False",
+      "HTMLTemplateId" : ""
+      }</propertySetConfig>
+    <sequenceNumber>2.0</sequenceNumber>
+    <type>Step</type>
+  </omniProcessElements>
+  <omniProcessType>OmniScript</omniProcessType>
+  <propertySetConfig>
+    {"persistentComponent":[{"render":false,"label":"","remoteClass":"","remoteMethod":"","remoteTimeout":30000,"remoteOptions":{"preTransformBundle":"","postTransformBundle":""},"preTransformBundle":"","postTransformBundle":"","sendJSONPath":"","sendJSONNode":"","responseJSONPath":"","responseJSONNode":"","id":"vlcCart","itemsKey":"cartItems","modalConfigurationSetting":{"modalHTMLTemplateId":"vlcProductConfig.html","modalController":"ModalProductCtrl","modalSize":"lg"}},{"render":false,"label":"","remoteClass":"","remoteMethod":"","remoteTimeout":30000,"remoteOptions":{"preTransformBundle":"","postTransformBundle":""},"preTransformBundle":"","postTransformBundle":"","id":"vlcKnowledge","itemsKey":"knowledgeItems","modalConfigurationSetting":{"modalHTMLTemplateId":"","modalController":"","modalSize":"lg"}}],"allowSaveForLater":true,"saveNameTemplate":null,"saveExpireInDays":null,"saveForLaterRedirectPageName":"sflRedirect","saveForLaterRedirectTemplateUrl":"vlcSaveForLaterAcknowledge.html","saveContentEncoded":false,"saveObjectId":"%ContextId%","saveURLPatterns":{},"autoSaveOnStepNext":false,"elementTypeToHTMLTemplateMapping":{},"seedDataJSON":{},"trackingCustomData":{},"enableKnowledge":false,"bLK":false,"lkObjName":null,"knowledgeArticleTypeQueryFieldsMap":{},"timeTracking":true,"hideStepChart":true,"visualforcePagesAvailableInPreview":{},"cancelType":"SObject","allowCancel":true,"cancelSource":"%ContextId%","cancelRedirectPageName":"OmniScriptCancelled","cancelRedirectTemplateUrl":"vlcCancelled.html","consoleTabLabel":"New","wpm":false,"ssm":false,"message":{},"pubsub":false,"autoFocus":false,"currencyCode":"","showInputWidth":false,"rtpSeed":false,"consoleTabTitle":null,"consoleTabIcon":"custom:custom18","errorMessage":{"custom":[]},"disableUnloadWarn":true,"stepChartPlacement":"right","currentLanguage":"en_US"}</propertySetConfig>
+  <subType>editContact</subType>
+  <type>sample</type>
+  <uniqueName>sample_editContact_English_1</uniqueName>
+  <versionNumber>1.0</versionNumber>
+  <webComponentKey>ac4e59d4-a5e3-e631-06d4-091f9f4a33b9</webComponentKey>
+</OmniScript>

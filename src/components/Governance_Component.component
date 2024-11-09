@@ -1,0 +1,56 @@
+<apex:component controller="Governance_Component_Controller">
+    <style>
+        
+        .panelStyle{
+        	border-style: groove;
+    		border-color: black;
+    		border-width: 2px;
+        }
+        
+        .labelStyle{
+        	font-size: 20px !important;
+        	font-family: Arial !important;
+        	font-weight: bold !important;
+        }
+        
+        
+        
+    </style>
+    <div align = "center" style="padding: 30px " >
+    
+    <apex:panelGrid columns="3" width="70%" border="3" >
+       <apex:outputPanel >
+       <apex:panelGroup >
+            <div align = "center">
+            
+            	<apex:outputLabel styleClass="labelStyle"> SCAN DATE <BR/><BR/> </apex:outputLabel>
+            	<span style="font-size: 20px; font-weight: bold;font-family: Arial">
+                    <apex:outputField value="{!scan.Scan_Date__c}" />
+                </span> 
+            </div>
+       </apex:panelGroup>
+       </apex:outputPanel>     
+        
+       <apex:panelGroup >
+            <div align = "center">
+            	<apex:outputLabel styleClass="labelStyle"> NUMBER OF ISSUES <BR/> <BR/>  </apex:outputLabel>
+                <span style="font-size: 25px; font-weight: bold;font-family: Arial">
+            		<apex:outputField value="{!scan.Issues__c}" styleClass="fieldStyle"/>
+                </span>
+          	</div>
+        </apex:panelGroup>
+        
+        <apex:panelGroup >
+        	<div align = "center">
+                <apex:outputLabel styleClass="labelStyle"> TRENDING <BR/>   </apex:outputLabel>
+                <apex:image url="{!URLFOR($Resource.Quality_Clouds,'LogoUp.png')}"  rendered="{!trendingUp}"/>
+                <apex:image url="{!URLFOR($Resource.Quality_Clouds,'LogoDown.png')}"  rendered="{!trendingDown}"/>
+                <apex:image url="{!URLFOR($Resource.Quality_Clouds,'LogoIgual.png')}"  rendered="{!trendingIgual}" height="50px" width="50px"/>
+            </div>
+        </apex:panelGroup>
+        
+    </apex:panelGrid>
+        
+       
+    </div>
+</apex:component>

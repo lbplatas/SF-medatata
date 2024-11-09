@@ -1,0 +1,35 @@
+<apex:page controller="Dashboard_Controller" tabStyle="Governance__tab" >
+    
+    <div align = "center">
+        
+        <c:Governance_Component rendered="{!!displayError}"></c:Governance_Component>
+        
+        <apex:PageMessage summary="No Scan Available" severity="warning" strength="3" rendered="{!displayError}"></apex:PageMessage>
+        
+ 		<apex:panelGrid style="padding-bottom:70px">
+       		<apex:chart height="400" width="700" data="{!data}" animate="false">
+                <apex:axis type="Numeric" position="left" fields="issues" title="Number of Issues" grid="true" minimum="0" />
+                <apex:axis type="Category" position="bottom" fields="scanDate" title="Scan Date" />
+                <apex:lineSeries axis="left" fill="false" xField="scanDate" yField="issues" markerType="circle" markerSize="4" markerFill="#FF0000" smooth="5" strokeColor="black" strokeWidth="2"  />
+            </apex:chart>  
+		</apex:panelGrid>
+        
+        <apex:panelGrid style="padding-bottom:70px">
+    		<apex:chart height="400" width="700" data="{!data}" animate="false" >
+                <apex:axis type="Numeric" position="left" fields="tecDeb" title="Technical Debt" grid="true" minimum="0"/>
+                <apex:axis type="Category" position="bottom" fields="scanDate" title="Scan Date" />
+                <apex:lineSeries axis="left" fill="false" xField="scanDate" yField="tecDeb" markerType="circle" markerSize="4" markerFill="#FF0000" smooth="5" strokeColor="black" strokeWidth="2"  />
+            </apex:chart>  
+        </apex:panelGrid>
+        	
+		<apex:panelGrid style="padding-bottom:70px">
+            <apex:chart height="400" width="700" data="{!data}" animate="false">
+                <apex:axis type="Numeric" position="left" fields="codLin" title="Code Lines" grid="true" minimum="0"/>
+                <apex:axis type="Category" position="bottom" fields="scanDate" title="Scan Date" />
+                <apex:lineSeries axis="left" fill="false" xField="scanDate" yField="codLin" markerType="circle" markerSize="4" markerFill="#FF0000" smooth="5" strokeColor="black" strokeWidth="2"/>
+            </apex:chart>  
+        </apex:panelGrid>
+        
+    </div>
+         
+</apex:page>
