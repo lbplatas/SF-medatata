@@ -3,6 +3,6 @@
     <label>Profile 1</label>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ApiEnabled</name>
+        <name>AuthorApex</name>
     </userPermissions>
 </Profile>
