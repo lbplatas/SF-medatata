@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>Handles requests to launch or re-run a Quality Clouds scan on a Salesforce or ServiceNow instance.</description>
+    <developerName>QC_Scan_Execution</developerName>
+    <genAiFunctions>
+        <functionName>QC_Run_Scan</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>Always ask which instance to scan if the user has not named one. Never launch a scan without the user's confirmation.</description>
+        <developerName>instruction_ask_instance</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ask_instance</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>After launching the scan, give the user the scan id and tell them results usually take a few minutes.</description>
+        <developerName>instruction_report_scan</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_report_scan</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>QC Scan Execution</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your job is to launch Quality Clouds scans on the instances the user names and to report the scan id. You do not change rules or write-offs.</scope>
+</GenAiPlugin>
