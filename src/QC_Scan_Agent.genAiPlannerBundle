@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Planner of the QC Scan Agent.</description>
+    <masterLabel>QC Scan Agent</masterLabel>
+    <plannerType>AiCopilot__ReAct</plannerType>
+    <genAiPlugins>
+        <genAiPluginName>QC_Scan_Execution</genAiPluginName>
+    </genAiPlugins>
+</GenAiPlannerBundle>
