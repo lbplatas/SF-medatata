@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Launches a Quality Clouds full scan on the given instance and returns the scan id.</description>
+    <invocationTarget>QCRunScanAction</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>true</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <masterLabel>Run Quality Clouds Scan</masterLabel>
+    <progressIndicatorMessage>Launching the scan...</progressIndicatorMessage>
+</GenAiFunction>
