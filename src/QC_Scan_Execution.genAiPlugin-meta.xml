@@ -36,22 +36,18 @@
         <language>en_US</language>
         <masterLabel>instruction_report_scan</masterLabel>
     </genAiPluginInstructions>
-      </genAiPluginInstructions>
         <genAiPluginInstructions>
         <description>After launching the scan, give the user the scan id and tell them results usually take a few minutes.</description>
         <developerName>instruction_report_scan</developerName>
         <language>en_US</language>
         <masterLabel>instruction_report_scan</masterLabel>
     </genAiPluginInstructions>
-        </genAiPluginInstructions>
         <genAiPluginInstructions>
         <description>After launching the scan, give the user the scan id and tell them results usually take a few minutes.</description>
         <developerName>instruction_report_scan</developerName>
         <language>en_US</language>
         <masterLabel>instruction_report_scan</masterLabel>
     </genAiPluginInstructions>
-     </genAiPluginInstructions>
-        </genAiPluginInstructions>
         <genAiPluginInstructions>
         <description>After launching the scan, give the user the scan id and tell them results usually take a few minutes.</description>
         <developerName>instruction_report_scan</developerName>
