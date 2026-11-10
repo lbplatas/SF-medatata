@@ -18,6 +18,12 @@
         <language>en_US</language>
         <masterLabel>instruction_ask_instance_xxxxx</masterLabel>
     </genAiPluginInstructions>
+     <genAiPluginInstructions>
+        <description>Always ask which instance to scan if the user has not named one. Never launch a scan without the user's confirmation.</description>
+        <developerName>instruction_ask_instance</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_ask_instance_xxxxx</masterLabel>
+    </genAiPluginInstructions> 
     <language>en_US</language>
     <masterLabel>QC Scan Execution</masterLabel>
     <pluginType>Topic</pluginType>
